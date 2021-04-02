@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {first} from 'rxjs/operators';
@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
     console.log(this.form.value);
   }
 
-  get f() {
+  get f(): { [p: string]: AbstractControl } {
     return this.form.controls;
   }
 
-  login() {
+  login(): void {
     this.submitted = true;
     if (this.form.invalid) {
       return;
