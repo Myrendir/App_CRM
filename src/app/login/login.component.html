@@ -1,15 +1,17 @@
 <!--<label for="username">Username</label>-->
 <!--<input type="text" id="username" name="username" placeholder="Username" class="black box"-->
 <!--       formControlName="username">-->
+
 <!--<label for="Password">Password</label>-->
 <!--<input type="password" id="Password" name="Password" placeholder="Password" class="black box"-->
 <!--       formControlName="password">-->
+
 <form class="form" [formGroup]="form" (ngSubmit)="login()">
   <h2>Connexion</h2>
   <div class="example-container">
     <mat-form-field appearance="fill">
       <mat-label>Enter your email</mat-label>
-      <input matInput placeholder="email@example.com" formControlName="email" required>
+      <input matInput placeholder="email@example.com" formControlName="username" required>
       <!--    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
     </mat-form-field>
   </div>
@@ -23,4 +25,5 @@
     <button type="submit" mat-raised-button color="primary">Login</button>
   </div>
 </form>
+
 

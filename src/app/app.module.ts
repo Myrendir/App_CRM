@@ -12,12 +12,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {ResultsComponent} from './results/results.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatButtonToggleModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [EnvServiceProvider],
   bootstrap: [AppComponent]
