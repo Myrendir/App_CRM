@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {EnvService} from '../env.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +8,8 @@ import {EnvService} from '../env.service';
 export class HomeComponent implements OnInit {
   message: string;
 
-  constructor(env: EnvService) {
-    if (env.enableDebug) {
-      console.log(env.apiUrl);
-    }
+  constructor() {
+
   }
 
   ngOnInit(): void {
