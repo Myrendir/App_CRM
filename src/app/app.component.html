@@ -1,3 +1,2 @@
-<h1>Bienvenue sur appcrm</h1>
-<a *ngIf="!authService.isUserLoggedIn()" routerLink="/login">Se connecter</a>
-<a *ngIf="authService.isUserLoggedIn()" (click)="logout()">Se déconnecter</a>
+<h1>{{title}}</h1>
+<router-outlet></router-outlet>

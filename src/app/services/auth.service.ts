@@ -31,7 +31,7 @@ export class AuthService {
     };
   }
 
-  login(username: string, password: string) {
+  login(username: string, password: string): Observable<User> {
     return this.http.post<User>(apiUrl + 'api/login', {username, password})
       .pipe(map(
         userData => {
@@ -42,17 +42,22 @@ export class AuthService {
         catchError(this.handleError<User>('errorLogin')));
   }
 
-  isUserLoggedIn() {
+  isUserLoggedIn(): boolean {
     const user = localStorage.getItem('currentUser');
     console.log(!(user === null));
     return !(user === null);
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('currentUser');
   }
 
-  register(identifiant: User) {
+  register(identifiant: User): Observable<User> {
     return this.http.post<User>(apiUrl + '/api/signup', identifiant);
   }
+
+  // user_is_admin() {
+  //   const is_admin =
+  //
+  // }
 }
